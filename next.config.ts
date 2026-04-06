@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Disabled because camera APIs (getUserMedia) break under StrictMode's
+  // intentional double-invoke of effects — causes two <video> elements in dev.
+  reactStrictMode: false,
 };
 
 export default nextConfig;

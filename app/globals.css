@@ -24,3 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes flash-success {
+  0%   { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+.flash-success { animation: flash-success 0.4s ease-out forwards; }
+
+/* Force html5-qrcode to fill our container and hide its own chrome */
+#qr-scanner-container,
+#qr-scanner-container > div {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+#qr-scanner-container canvas,
+#qr-scanner-container img {
+  display: none !important;
+}
+#qr-scanner-container video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
